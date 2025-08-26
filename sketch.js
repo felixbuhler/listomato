@@ -23,7 +23,7 @@ function generateNoise(pg) {
 
 let c1, c2, c3, c4, title;
 
-let baseSize = 80;
+let baseSize = 100;
 let minSize = 10;
 
 // –––––––––––––––––––––––
@@ -62,9 +62,9 @@ function draw() {
   let centerX = canvasSize / 2;
   let centerY = canvasSize / 2;
 
-  c1 = color(220, 220, 220);
-  c2 = color(63, 191, 191);
-  c3 = color(63, 191, 80);
+  c1 = color(240, 240, 240);
+  c2 = document.getElementById("c1").value;
+  c3 = document.getElementById("c2").value;
   c4 = color(40, 40, 40)
 
   let gradientOffset = 0;
@@ -94,7 +94,7 @@ function draw() {
 
   push();
 
-  gradientOffset = 0;
+  gradientOffset = 50;
   gradient = this.drawingContext.createLinearGradient(0, gradientOffset, 0, canvasSize);
 
   gradient.addColorStop(0, c1);
@@ -120,7 +120,9 @@ function draw() {
   let textSizeValue = baseSize;
   textSize(textSizeValue);
 
-  while (textWidth(content) > width * 0.975 && textSizeValue > minSize) {
+  let width = canvasSize - textSizeValue / 2;
+
+  while (textWidth(content) > width * 0.85 && textSizeValue > minSize) {
     textSizeValue--;
     textSize(textSizeValue);
   }
@@ -128,10 +130,35 @@ function draw() {
   textFont(font);
   textAlign(LEFT, TOP);
   fill(c4);
-  text(content, textSizeValue / 2, textSizeValue / 2.5);
+  textLeading(textSizeValue);
+  text(content, textSizeValue / 2, textSizeValue / 3);
 
+  pop();
+
+
+  push();
+  fill(c4);
+  ellipse(canvasSize - baseSize, canvasSize - baseSize, baseSize * 0.7, baseSize * 0.7)
+  pop();
+
+  push();
+  stroke(c4);
+  strokeWeight(10);
+  noFill();
+  ellipse(canvasSize - baseSize * 1.8, canvasSize - baseSize, baseSize * 0.7 - 10, baseSize * 0.7 - 10)
   pop();
 }
 
 
 // Export
+
+function fileexport() {
+  let playlistTitleRaw = document.getElementById("title").value.toUpperCase();
+  let playlistTitle = playlistTitleRaw.replace(/[ \t]+(?=\r?\n)/g, "");
+  playlistTitle = playlistTitle.replace(/\r?\n/g, "_");
+  playlistTitle = playlistTitle.replace(/[ \t]/g, "_");
+
+  saveCanvas("LISTOMATO_" + playlistTitle, 'png')
+}
+
+console.log(document.getElementById("c1").value)
