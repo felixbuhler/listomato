@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --canvas-size: 760px;
+
+  --padding: 20px;
+}
+
+#cover {
+  display: block;
+  width: var(--canvas-size);
+  height: var(--canvas-size);
+}
+
+main {
+  margin: 0 auto;
+  padding: var(--padding);
+}
+
+#columns {
+  display: flex;
+  gap: var(--padding);
+}
+
+#settings {
+  display: flex;
+  flex-direction: column;
+  background: yellow;
+  gap: var(--padding);
+  flex: 0 0 1;
+}
+
+#settings section {
+  background: rgba(0, 0, 0, 0.2);
+  padding: var(--padding);
+  
+}
