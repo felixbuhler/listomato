@@ -1,6 +1,7 @@
 ---
 import Canvas from "../components/canvas/Canvas.astro";
 import Header from "../components/Header.astro";
+import Loading from "../components/Loading.astro";
 import Settings from "../components/settings/Settings.astro";
 ---
 
@@ -10,10 +11,11 @@ import Settings from "../components/settings/Settings.astro";
     <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>LISTOMATO</title>
+    <title>🔊🍅</title>
   </head>
-  <body
-    ><main>
+  <body>
+    <Loading />
+    <main>
       <Header />
 
       <Canvas />
@@ -73,3 +75,15 @@ import Settings from "../components/settings/Settings.astro";
     }
   }
 </style>
+
+<script>
+  const titles = ["🔈", "🔉", "🔊", "🍅", "LISTOMATO"];
+  const delays = [150, 150, 150, 1000, 2000];
+
+  function loopTitles(index = 0) {
+    document.title = titles[index];
+    const nextIndex = (index + 1) % titles.length;
+    setTimeout(() => loopTitles(nextIndex), delays[index]);
+  }
+  loopTitles();
+</script>

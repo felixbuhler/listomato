@@ -90,7 +90,7 @@ export const playlistCover = (p) => {
         gradientOffset = canvasSize / 20;
         gradient = p.drawingContext.createLinearGradient(0, gradientOffset, 0, canvasSize);
         gradient.addColorStop(0, colorWhite);
-         gradient.addColorStop(0.5, colorTop);
+        gradient.addColorStop(0.5, colorTop);
         gradient.addColorStop(1, colorBottom);
         p.drawingContext.fillStyle = gradient;
 
@@ -164,4 +164,12 @@ export const playlistCover = (p) => {
     download.addEventListener("click", function (e) {
         fileexport();
     });
+
+    // Loader
+
+    loading = p.select("#loading"); // p5.js Funktion
+    // div nach 1 Sekunde ausblenden (z.B.)
+    setTimeout(() => {
+        loading.elt.classList.add("hidden");
+    }, 1000);
 }
