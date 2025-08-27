@@ -12,8 +12,9 @@
     padding-bottom: var(--padding);
   }
 
-  #download { margin-top: 2rem;
-    padding: calc(0.5 * var(--padding)) calc(0.75 * var(--padding));
+  #download {
+    margin-top: 1rem;
+    padding: calc(0.75 * var(--padding)) calc(0.75 * var(--padding));
     background-color: var(--color-red);
     border: none;
     outline: none;
@@ -22,5 +23,17 @@
     font-size: 1rem;
     font-family: inherit;
     color: white;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  @media (pointer: fine) {
+    #download:hover {
+      scale: 1.1;
+    }
+
+     #download:active {
+      scale: 0.95;
+    }
   }
 </style>

@@ -3,9 +3,65 @@
 ---
 
 <section id="section-color" class="setting">
-  <h2>Colors</h2>
+  <h2>Colors <button id="random">Randomize!</button></h2>
   <input id="color-top" type="color" name="color-top" value="#ff00ff" />
   <input id="color-bottom" type="color" name="color-bottom" value="#ff0000" />
 </section>
 
+<script>
+  function randomColor() {
+    let randomColorTop = "#000000".replace(/0/g, function () {
+      return (~~(Math.random() * 16)).toString(16);
+    });
+    let randomColorBottom = "#000000".replace(/0/g, function () {
+      return (~~(Math.random() * 16)).toString(16);
+    });
 
+    document.getElementById("color-top").value = randomColorTop;
+    document.getElementById("color-bottom").value = randomColorBottom;
+  }
+
+  const random = document.getElementById("random");
+
+  random.addEventListener("click", function (e) {
+    randomColor();
+  });
+</script>
+
+<style>
+  #random {
+    appearance: none;
+    color: var(--color-red);
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    font-size: inherit;
+    border: 1px solid currentColor;
+    padding: 0.25em 0.35em;
+    translate: 0 -0.25em;
+    border-radius: 2px;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  @media (pointer: fine) {
+    #random:hover {
+      scale: 1.1;
+    }
+
+    #random:active {
+      scale: 0.95;
+    }
+  }
+
+  input[type="color"] {
+    translate: -3px 0px;
+  }
+
+  h2 {
+    display: flex;
+    justify-content: space-between;
+  }
+</style>
