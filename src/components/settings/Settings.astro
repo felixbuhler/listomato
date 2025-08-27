@@ -40,4 +40,14 @@ import Color from "./Color.astro";
     text-transform: uppercase;
     letter-spacing: 0.05em;
   }
+
+  @media screen and (max-width: 800px) {
+    #settings {
+      max-width: var(--canvas-size);
+      width: 100%;
+    }
+    .setting {
+      max-width: 100%;
+    }
+  }
 </style>

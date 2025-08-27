@@ -5,21 +5,59 @@ import Illustration from "./Illustration.astro";
 <header>
   <h1 aria-label="LISTOMATIO — An Artwork Generator For Playlists">
     <Illustration />
-    LISTOMATIO — An Artwork Generator For Playlists
+    LISTOMATO — An Artwork Generator For Playlists
   </h1>
+  <div id="description">
+    <p>
+      <strong>LISTOMATO 🍅</strong> is a free generator for playlist artworks in
+      Spotify, Apple Music or any other service.
+    </p>
+    <p>
+      It was designed and developed by <a
+        href="https://felix-buhler.de"
+        title="Website of Felix Buhler">Felix Buhler</a
+      >—designer and art director from Berlin (D).
+    </p>
+    <p>
+      It is build with <a href="https://p5js.org" title="P5.JS">P5.js</a>, <a href="https://astro.build" title="Astro">Astro</a>
+      and <a href="https://vercel.com/" title="Vercel">Vercel.</a>
+    </p>
+    <p>
+      <a href="https://felix-buhler.de" title="Website of Felix Buhler"
+        >Imprint + Data Privacy</a
+      >
+    </p>
+  </div>
 </header>
 
 <style>
   header {
     margin-bottom: var(--padding);
-   
+
     flex: 1 1 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    gap: var(--padding);
+  }
+
+  p {
+    max-width: 150px;
+    font-size: 0.8rem;
+    color: var(--color-red);
+    margin-bottom: 0.5em;
+  }
+
+  a {
+    color: inherit;
   }
 
   h1 {
     font-size: 0px;
+  }
+
+  @media screen and (max-width: 800px) {
+    p {max-width: var(--canvas-size);}
   }
 </style>
