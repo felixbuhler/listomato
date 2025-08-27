@@ -2,7 +2,13 @@
 
 ---
 
-<div id="playlist-cover"></div>
+<div id="artwork">
+  <div id="cover-wrapper">
+    <h2>Preview</h2>
+    <div id="playlist-cover"></div>
+    <h2>Change settings</h2>
+  </div>
+</div>
 
 <script>
   import p5 from "p5";
@@ -14,10 +20,25 @@
 </script>
 
 <style>
+  #artwork {
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #cover-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: calc(3 * var(--padding));
+  }
+
   #playlist-cover {
     width: var(--canvas-size);
     height: var(--canvas-size);
     border-radius: var(--border-radius);
     overflow: hidden;
+    margin: 0 auto;
   }
 </style>

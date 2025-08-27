@@ -17,7 +17,7 @@ export const playlistCover = (p) => {
 
     let noiseLayer;
 
-    function generateNoise(pg, blockSize = 1.5) {
+    function generateNoise(pg, blockSize = 0.75) {
         pg.noStroke();
         for (let y = 0; y < pg.height; y += blockSize) {
             for (let x = 0; x < pg.width; x += blockSize) {
@@ -70,10 +70,11 @@ export const playlistCover = (p) => {
 
         p.push();
 
-        gradientOffset = canvasSize / 3;
+        gradientOffset = canvasSize / 3.5;
         gradient = p.drawingContext.createLinearGradient(0, gradientOffset, 0, canvasSize);
         gradient.addColorStop(0, colorWhite);
-        gradient.addColorStop(0.5, colorTop);
+        gradient.addColorStop(0.4, colorTop);
+        gradient.addColorStop(0.6, colorTop);
         gradient.addColorStop(1, colorBottom);
         p.drawingContext.fillStyle = gradient;
 
@@ -89,7 +90,8 @@ export const playlistCover = (p) => {
         gradientOffset = canvasSize / 20;
         gradient = p.drawingContext.createLinearGradient(0, gradientOffset, 0, canvasSize);
         gradient.addColorStop(0, colorWhite);
-        gradient.addColorStop(0.5, colorTop);
+        gradient.addColorStop(0.4, colorTop);
+         gradient.addColorStop(0.5, colorTop);
         gradient.addColorStop(1, colorBottom);
         p.drawingContext.fillStyle = gradient;
 

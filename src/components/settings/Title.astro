@@ -3,6 +3,34 @@
 ---
 
 <section id="section-title" class="setting">
-  <h3>Text</h3>
-  <textarea id="title">Playlist</textarea>
+  <h2>Title</h2>
+  <textarea id="title" rows="1">Playlist</textarea>
 </section>
+
+<style>
+  textarea {
+    width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid var(--color-red);
+    padding-bottom: 0.25em;
+    font-size: 1rem;
+    color: red;
+    max-width: 100%;
+    field-sizing: content;
+  }
+</style>
+
+<script>
+  document.querySelectorAll("textarea").forEach(function (textarea) {
+    textarea.style.height = textarea.scrollHeight + "px";
+    textarea.style.overflowY = "hidden";
+
+    textarea.addEventListener("input", function () {
+      this.style.height = "auto";
+      this.style.height = this.scrollHeight + "px";
+    });
+  });
+</script>
