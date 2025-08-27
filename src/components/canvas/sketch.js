@@ -8,7 +8,7 @@ export const playlistCover = (p) => {
     // Variables
 
     let colorWhite, colorBlack, colorTop, colorBottom, font;
-    let baseSize = 100;
+    let baseSize = canvasSize / 7.5;
     let minSize = 10;
 
     window.p = p;
@@ -70,7 +70,7 @@ export const playlistCover = (p) => {
 
         p.push();
 
-        gradientOffset = 300;
+        gradientOffset = canvasSize / 3;
         gradient = p.drawingContext.createLinearGradient(0, gradientOffset, 0, canvasSize);
         gradient.addColorStop(0, colorWhite);
         gradient.addColorStop(0.5, colorTop);
@@ -86,7 +86,7 @@ export const playlistCover = (p) => {
 
         p.push();
 
-        gradientOffset = 50;
+        gradientOffset = canvasSize / 20;
         gradient = p.drawingContext.createLinearGradient(0, gradientOffset, 0, canvasSize);
         gradient.addColorStop(0, colorWhite);
         gradient.addColorStop(0.5, colorTop);
@@ -138,9 +138,10 @@ export const playlistCover = (p) => {
         p.push();
 
         p.stroke(colorBlack);
-        p.strokeWeight(10);
+        let strokeWeight = baseSize / 10;
+        p.strokeWeight(strokeWeight);
         p.noFill();
-        p.ellipse(canvasSize - baseSize * 1.8, canvasSize - baseSize, baseSize * 0.7 - 10, baseSize * 0.7 - 10)
+        p.ellipse(canvasSize - baseSize * 1.8, canvasSize - baseSize, baseSize * 0.7 - strokeWeight, baseSize * 0.7 - strokeWeight)
 
         p.pop();
 
