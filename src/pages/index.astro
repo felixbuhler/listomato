@@ -1,0 +1,35 @@
+---
+import Canvas from "../components/canvas/Canvas.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>LISTOMATO</title>
+  </head>
+  <body>
+    <h1>Astro</h1>
+
+    <Canvas />
+  </body>
+</html>
+
+<style is:global>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+    /* Colors */
+    --color-red: red;
+    --color-black: #181818;
+
+    /* Canvas */
+    --canvas-size: 760px;
+  }
+</style>
