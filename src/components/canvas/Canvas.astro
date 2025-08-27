@@ -8,13 +8,16 @@
   import p5 from "p5";
   import { playlistCover } from "./sketch.js";
 
-  new p5(playlistCover, document.getElementById("playlist-canvas"));
+  window.onload = () => {
+    new p5(playlistCover, document.getElementById("playlist-canvas"));
+  };
 </script>
 
 <style>
   #playlist-cover {
-    outline: 1px solid orange;
     width: var(--canvas-size);
-    height: var(--canvas-size)
+    height: var(--canvas-size);
+    border-radius: var(--border-radius);
+    overflow: hidden;
   }
 </style>

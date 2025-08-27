@@ -1,5 +1,6 @@
 ---
 import Canvas from "../components/canvas/Canvas.astro";
+import Settings from "../components/settings/Settings.astro";
 ---
 
 <html lang="en">
@@ -14,6 +15,7 @@ import Canvas from "../components/canvas/Canvas.astro";
     <h1>Astro</h1>
 
     <Canvas />
+	<Settings />
   </body>
 </html>
 
@@ -30,6 +32,9 @@ import Canvas from "../components/canvas/Canvas.astro";
     --color-black: #181818;
 
     /* Canvas */
-    --canvas-size: 760px;
+    --canvas-size: 390px;
+
+    /* Dimensions */
+    --border-radius: 25px;
   }
 </style>
