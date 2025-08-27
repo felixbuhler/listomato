@@ -73,7 +73,7 @@ export const playlistCover = (p) => {
         gradientOffset = canvasSize / 3.5;
         gradient = p.drawingContext.createLinearGradient(0, gradientOffset, 0, canvasSize);
         gradient.addColorStop(0, colorWhite);
-        gradient.addColorStop(0.4, colorTop);
+
         gradient.addColorStop(0.6, colorTop);
         gradient.addColorStop(1, colorBottom);
         p.drawingContext.fillStyle = gradient;
@@ -90,7 +90,6 @@ export const playlistCover = (p) => {
         gradientOffset = canvasSize / 20;
         gradient = p.drawingContext.createLinearGradient(0, gradientOffset, 0, canvasSize);
         gradient.addColorStop(0, colorWhite);
-        gradient.addColorStop(0.4, colorTop);
          gradient.addColorStop(0.5, colorTop);
         gradient.addColorStop(1, colorBottom);
         p.drawingContext.fillStyle = gradient;
