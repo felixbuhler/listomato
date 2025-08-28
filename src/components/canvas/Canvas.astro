@@ -6,7 +6,7 @@
   <div id="cover-wrapper">
     <h2>Preview</h2>
     <div id="playlist-cover"></div>
-    <h2>Change settings</h2>
+    <h2 style="rotate: 180deg;">Preview</h2>
   </div>
 </div>
 
@@ -25,13 +25,14 @@
     display: flex;
     justify-content: space-around;
     flex-direction: column;
-    text-align: center; pointer-events: none !important;
+    text-align: center;
+    pointer-events: none !important;
   }
 
   #cover-wrapper {
     display: flex;
     flex-direction: column;
-    gap: calc(3 * var(--padding));
+    gap: calc(1.5 * var(--padding));
   }
 
   #playlist-cover {
