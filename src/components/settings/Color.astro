@@ -30,10 +30,10 @@
   document.body.onkeyup = function (e) {
     if (e.key == " " || e.code == "Space" || e.keyCode == 32) {
       randomColor();
-      document.getElementById("random").style.scale = "0.95";
+      document.getElementById("random").classList.add("hover");
 
       setTimeout(function () {
-        document.getElementById("random").style.scale = "1";
+        document.getElementById("random").classList.remove("hover");
       }, 200); // for 3 seconds
     }
   };
@@ -56,6 +56,10 @@
     border-radius: 2px;
     transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
     display: inline-block;
+  }
+
+  .hover {
+    scale: 0.95;
   }
 
   @media (pointer: fine) {
