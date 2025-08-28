@@ -15,17 +15,26 @@ import Illustration from "./Illustration.astro";
     <p>
       It was designed and developed by <a
         href="https://felix-buhler.de"
-        title="Website of Felix Buhler">Felix Buhler</a
+        title="Website of Felix Buhler" target="_blank">Felix Buhler</a
       >—designer and art director from Berlin (D).
     </p>
     <p>
-      It is build with <a href="https://p5js.org" title="P5.JS">P5.js</a>, <a href="https://astro.build" title="Astro">Astro</a>
-      and <a href="https://vercel.com/" title="Vercel">Vercel.</a>
+      It is build with <a href="https://p5js.org" title="P5.JS" target="_blank">P5.js</a>, <a
+        href="https://astro.build"
+        title="Astro">Astro</a
+      >
+      and <a href="https://vercel.com/" title="Vercel" target="_blank">Vercel.</a>
     </p>
-    <p><br></p>
     <p>
-      ▋&nbsp;&nbsp;▋&nbsp;&nbsp;▋&nbsp;&nbsp;▋&nbsp;&nbsp;▋
+      <br />⁕ <a id="donate-button"
+        href="https://www.paypal.com/paypalme/felixbuhler"
+        title="Donate on PayPal" target="_blank">Buy me a tomato</a
+      > ⁕
+      <br />
+      <br />
     </p>
+
+    <p>▋&nbsp;&nbsp;▋&nbsp;&nbsp;▋&nbsp;&nbsp;▋&nbsp;&nbsp;▋</p>
   </div>
 </header>
 
@@ -57,7 +66,16 @@ import Illustration from "./Illustration.astro";
     font-size: 0px;
   }
 
+  #donate-button {
+    text-decoration: none;
+    background: var(--color-red);
+    color: white;
+    border-radius: 4em; padding: 0.1em 0.5em
+  }
+
   @media screen and (max-width: 800px) {
-    p {max-width: var(--canvas-size);}
+    p {
+      max-width: var(--canvas-size);
+    }
   }
 </style>
